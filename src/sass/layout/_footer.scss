@@ -1,0 +1,50 @@
+@import '../base/customize';
+@import '../base/reset';
+@import '../helper/mixin';
+@import '../helper/variables';
+
+.footer {
+    text-align: $t-left;
+    .col-information {
+        h6 {
+            text-transform: uppercase;
+            @include text($color-gray-2, $fs-7, $fw-bold-2, $t-left);
+            strong {
+                color: $color-gray-2;
+            }
+        }
+        ul {
+            list-style: $d-none;
+            li {
+                strong {
+                    color: $color-white-0;
+                }
+                a {
+                    text-decoration: $d-none;
+                    @include text($color-white-0, $fs-1, $fw-bold-2, $t-left);
+                    &::hover {
+                        color: $bg-header;
+                    }
+                }
+            }
+        }
+    }
+    @include carousel-next($color-gray-6, $color-black-0);
+    @include pd-topbot($pd-3);
+    .col-social {
+        ul.social-wrapper {
+            filter: saturate(0%) brightness(200%);
+            -webkit-filter: saturate(0%) brightness(200%);
+            list-style: $d-none;
+            @include social-icon($d-flex);
+            li {
+                a {
+                    img {
+                        @include width($width-1);
+                        margin-right: $mg-1;
+                    }
+                }
+            }
+        }
+    }
+}

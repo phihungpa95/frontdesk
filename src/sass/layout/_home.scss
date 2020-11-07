@@ -1,0 +1,308 @@
+@import '../base/customize';
+@import '../base/reset';
+@import '../helper/mixin';
+@import '../helper/variables';
+@import '../components/button';
+
+
+.information-section {
+    @include pd-topbot($pd-5);
+    @include slide-title($bg-header, $bg-header-1);
+    .rw-info {
+        align-items: $t-center;
+            .col-text__infomation {
+                text-align: $t-left;
+                @include col-width($d-block, $f-left, $width-small);
+            h1 {
+                @include text($color-white-0, $fs-6, $fw-bold-2, $t-left);
+            }
+            p {
+                @include text($color-white-0, $fs-2, $fw-bold-2, $t-left);
+                @include mr-tb($mrg-1);
+                opacity: $opacity-7;
+            }
+        }
+        .col-image {
+            display: contents;
+            img {
+                @include width($width-large);
+            }
+        }
+    }
+}
+
+.slide-logo {
+    @include pd-topbot($pd-3);
+    h2 {
+        @include text($color-gray-2, $fs-2, $fw-bold-3, $t-center);
+        text-transform: uppercase;
+    }
+    .slick-slider {
+        position: $postion-1;
+        .slick-track {
+            display: $d-flex;
+            align-items: $t-center;
+        }
+            .item {
+                &:focus {
+                        outline: none;
+                    }
+                img {
+                    @include img-slide($m-width-1, $m-heght-auto, $opacity-6);
+                    -webkit-filter: grayscale(100%);
+                    filter: grayscale(100%);
+                    &:hover {
+                        opacity: $opacity-9;
+                        filter: none;
+                        -webkit-filter: none;
+                    }
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+    }
+}
+
+.props-section {
+    @include pd-topbot($pd-3);
+    h1 {
+        @include text($color-black-0, $fs-10, $fw-bold-4, $t-center);
+    }
+    p.text-props {
+        @include text($color-gray-2, $fs-0, $fw-bold-2, $t-center);
+        @include mr-bt($mg-3);
+    }
+    .rw-text__icon {
+        text-align: $t-left;
+        .text-home-wrap {
+            margin-bottom: 72px;
+            img {
+                @include col-width($d-block, $f-left, $width-small-0);
+                clear: both;
+            }
+            .section-info {
+                @include col-width($d-block, $f-left, $width-large-1);
+                @include mr-bt($mg-5);
+                padding: $pd-1;
+                text-align: $t-left;
+                h5.section-info__title {
+                    @include text($color-black-0, $fs-0, $fw-bold-3, $t-left);
+                }
+                p {
+                    @include text($color-gray-2, $fs-1, $fw-bold-2, $t-left);
+                    @include mr-bt($mg-0);
+                }
+            }
+            .quote-title__img {
+                img.img-quote {
+                    @include col-width($d-block, $f-left, $width-small-2);
+                    clear: both;
+                    @include mr-bt($mg-1);
+                    margin-right: $mg-1;
+                }
+                .section-info__quote {
+                    p.quote-text {
+                        @include text($color-black-0, $fs-0, $fw-bold-2, $t-left);
+                        @include mr-bt($mg-1);
+                    }
+                    p.quote-title {
+                        @include text($color-gray-2, $fs-1, $fw-bold-2, $t-left);
+                    }
+                }
+            }
+        }
+        .col-img__second {
+            img {
+                top: 0;
+                position: $postion-3;
+            }
+        }
+    }
+}
+
+.book-section {
+    @include pd-topbot($pd-3);
+    .rw-book-section {
+        text-align: $t-left;
+        .text-wrap-home {
+            h1 {
+                @include text($color-black-0, $fs-10, $fw-bold-4, $t-left);
+            }
+            p {
+                @include text($color-black-0, $fs-0, $fw-bold-2, $t-left);
+            }
+            img {
+                @include col-width($d-block, $f-left, $width-small-0);
+                clear: both;
+            }
+            .section-info {
+                @include col-width($d-block, $f-left, $width-large-1);
+                @include mr-bt($mg-5);
+                padding: $pd-1;
+                text-align: $t-left;
+                h5.section-info__title {
+                    @include text($color-black-0, $fs-0, $fw-bold-3, $t-left);
+                }
+                p {
+                    @include text($color-gray-2, $fs-1, $fw-bold-2, $t-left);
+                    @include mr-bt($mg-0);
+                }
+            }
+        }
+        .col-img__second {
+            img {
+                top: 0;
+                position: $postion-3;
+            }
+        }
+    }
+}
+
+.channel-section {
+    @include pd-topbot($pd-3);
+    .rw-channel {
+        text-align: $t-left;
+        .text-wrap-home {
+            h1 {
+                @include text($color-black-0, $fs-10, $fw-bold-4, $t-left);
+            }
+            p {
+                @include text($color-black-0, $fs-0, $fw-bold-2, $t-left);
+            }
+            img {
+                @include col-width($d-block, $f-left, $width-small-0);
+                clear: both;
+            }
+            .section-info {
+                @include col-width($d-block, $f-left, $width-large-1);
+                @include mr-bt($mg-5);
+                padding: $pd-1;
+                h5.section-info__title {
+                    @include text($color-black-0, $fs-0, $fw-bold-3, $t-left);
+                }
+                p {
+                    @include text($color-gray-2, $fs-1, $fw-bold-2, $t-left);
+                    @include mr-bt($mg-0);
+                }
+            }
+        }
+        .col-img__channel {
+            img {
+                @include width($width-auto);
+                top: 0;
+                position: $postion-3;
+            }
+        }
+    }
+}
+
+.management-section {
+    @include pd-topbot($pd-3);
+    .rw-management {
+        text-align: $t-left;
+        .text-wrap-home {
+            h1 {
+                @include text($color-black-0, $fs-10, $fw-bold-4, $t-left);
+            }
+            p {
+                @include text($color-black-0, $fs-0, $fw-bold-2, $t-left);
+            }
+            img {
+                @include col-width($d-block, $f-left, $width-small-0);
+                clear: both;
+            }
+            .section-info {
+                @include col-width($d-block, $f-left, $width-large-1);
+                @include mr-bt($mg-5);
+                padding: $pd-1;
+                h5.section-info__title {
+                    @include text($color-black-0, $fs-0, $fw-bold-3, $t-left);
+                }
+                p {
+                    @include text($color-gray-2, $fs-1, $fw-bold-2, $t-left);
+                    @include mr-bt($mg-0);
+                }
+            }
+        }
+        .col-img__second {
+            img {
+                @include width($width-auto);
+                top: 0;
+                position: $postion-3;
+            }
+        }
+    }
+}
+
+.started-section {
+    @include pd-topbot($pd-3);
+    h1 {
+        @include width($width-auto);
+        @include text($color-black-0, $fs-4, $fw-bold-2, $t-center);
+    }
+    p {
+        @include width($width-auto);
+        @include text($color-black-0, $fs-0, $fw-bold-2, $t-center);
+    }
+    .col-started {
+        .text-card {
+            min-height: 220px;
+            img {
+                @include width($width-2);
+                margin: $pd-2 $pd-2 0;
+            }
+            h4 {
+                @include text($color-black-0, $fs-5, $fw-bold-3, $t-left);
+            }
+            p {
+                @include text($color-black-0, $fs-1, $fw-bold-2, $t-left);
+            }
+        }
+    }
+}
+
+.partner-logo {
+    @include pd-topbot($pd-3);
+    h2 {
+        @include text($color-gray-2, $fs-2, $fw-bold-3, $t-center);
+        text-transform: uppercase;
+    }
+    .slick-slider {
+        position: $postion-1;
+        .slick-track {
+            display: $d-flex;
+            align-items: $t-center;
+        }
+            .item {
+                &:focus {
+                        outline: none;
+                    }
+                img {
+                    @include img-slide($m-width-1, $m-heght-1, $opacity-6);
+                    -webkit-filter: grayscale(100%);
+                    filter: grayscale(100%);
+                    &:hover {
+                        opacity: $opacity-9;
+                        filter: none;
+                        -webkit-filter: none;
+                    }
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+    }
+}
+
+.cta__section {
+    display: none;
+    @include pd-topbot($pd-5);
+    @include slide-title($bg-header, $bg-header-1);
+    .item {
+        img {
+            @include width($width-auto);
+        }
+    }
+}
+

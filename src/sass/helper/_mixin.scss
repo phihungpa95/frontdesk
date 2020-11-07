@@ -1,0 +1,156 @@
+@mixin text($color, $fs, $fw, $t-center) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+    text-align: $t-center;
+}
+
+@mixin button($color, $fs, $bg-color, $pd-top-bot, $pd-right-left, $border-color, $color-hover, $bg-color-hover, $border-color-hover) {
+    color: $color;
+    font-size: $fs;
+    background-color: $bg-color;
+    padding: $pd-top-bot $pd-right-left;
+    border: 1px solid $border-color;
+    &:hover {
+        color: $color-hover;
+        background-color: $bg-color-hover;
+        border: 1px solid $border-color-hover;
+    }
+}
+
+@mixin mediaQuery($screen) {
+    @if map-has-key($map: $breakpoints, $key: $screen) {
+        $value: map-get($map: $breakpoints, $key: $screen);
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    }
+    else {
+        @warn "`#($screen)` khong ton tai";
+    }
+}
+
+@mixin search($bg-color, $fs-placeholder, $bg-color-focus, $border-color-focus) {
+    form {
+        background-color: $bg-color;
+        .form-control {
+            background-color: transparent;
+            border-color: transparent;
+            transition: none;
+            -webkit-transition: none;
+            -moz-transition: none;
+            -ms-transition: none;
+            -o-transition: none;
+            &::placeholder {
+                font-size: $fs-placeholder;
+            }
+            &:focus {
+                background-color: $bg-color-focus;
+                border-left-color: $border-color-focus;
+                border-top-color: $border-color-focus;
+                border-bottom-color: $border-color-focus;
+                box-shadow: none;
+            }
+            &:focus+.input-group-prepend {
+                .input-group-text {
+                    background-color: $bg-color-focus;
+                    border-right-color: $border-color-focus;
+                    border-top-color: $border-color-focus;
+                    border-bottom-color: $border-color-focus;
+                    &:hover {
+                        color: $color-white-0;
+                        background-color: $color-red-0;
+                    }
+                }
+            }
+        }
+        .input-group-prepend {
+            margin-left: -1px;
+            .input-group-text {
+                background-color: transparent;
+                border-color: transparent;
+                color: $color-red-0;
+                &:hover {
+                    color: $color-white-0;
+                    background-color: $color-red-0;
+                }
+            }
+        }
+    }
+}
+
+@mixin box($border-color-focus, $bg-color, $pd-top-bot, $pd-right-left) {
+    .categories {
+        .bg-custom {
+            .custom-bg {
+                border-top: $border-color-focus;
+                border-left: $border-color-focus;
+                border-right: $border-color-focus;
+                border-bottom: $border-color-focus;
+                background-color: $bg-color;
+                padding: $pd-right-left $pd-top-bot;
+                border: 1px solid;
+            }
+        }
+    }
+}
+
+@mixin slide-title($bg-color, $bg-img) {
+    background-color: $bg-color;
+    background-image: $bg-img;
+}
+
+@mixin col-width($d-block, $f-left, $width-small) {
+    display: $d-block;
+    float: $f-left;
+    width: $width-small;
+}
+
+@mixin width($width-large){
+    width: $width-large;
+}
+
+@mixin img-slide($m-width, $m-heght, $opacity-6) {
+    max-width: $m-width;
+    max-height: $m-heght;
+    opacity: $opacity-6;
+}
+
+@mixin slide-center($d-flex, $t-center) {
+    display: $d-flex;
+    align-items: $t-center;
+}
+
+@mixin pd-topbot($pd-3) {
+    padding-top: $pd-3;
+    padding-bottom: $pd-3;
+}
+
+@mixin pd-leftright($pd-1) {
+    padding-left: $pd-1;
+    padding-right: $pd-1;
+}
+
+@mixin nav-carousel($postion-2, $width-auto) {
+    position: $postion-2;
+    width: $width-auto;
+}
+
+@mixin carousel-next($color, $bg) {
+    color: $color;
+    background-color: $bg;
+}
+
+@mixin mr-bt($mg-5) {
+    margin-bottom: $mg-5;
+}
+
+@mixin mr-tb($mrg-1) {
+    margin-top: $mrg-1;
+    margin-bottom: $mrg-1;
+}
+
+@mixin social-icon($d-flex) {
+    display: $d-flex;
+    
+}

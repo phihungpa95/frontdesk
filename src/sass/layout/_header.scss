@@ -1,0 +1,25 @@
+@import '../base/customize';
+@import '../base/reset';
+@import '../helper/mixin';
+@import '../helper/variables';
+
+.bg-header {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    @include pd-topbot($pd-4);
+    img {
+        @include width($width-auto);
+    }
+    .nav-header {
+        .header-nav {
+            @include slide-center($d-flex, $t-center);
+        }
+        a {
+            @include pd-leftright($pd-1);
+            @include text($color-white-0, $fs-1, $fw-bold-2, $t-left);
+            text-transform: uppercase;
+            text-decoration: $d-none;
+        }
+    }
+}
